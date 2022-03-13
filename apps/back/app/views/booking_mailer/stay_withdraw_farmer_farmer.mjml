@@ -1,0 +1,34 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @booking.offer.farmer.user.first_name %>,</p>
+
+      <p>
+        Vous avez été contraint d’annuler la réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+      </p>
+
+      <p>
+        Nous allons tenir informé <%= @client.full_name %> de cette annulation.
+      </p>
+    </mj-text>
+
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in">
+      GERER MES RESERVATIONS
+    </mj-button>
+
+    <mj-text align="left">
+      <p>
+        Nous restons à votre disposition pour toutes questions.
+      </p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-agriculteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+
+
+    </mj-text>
+  </mj-column>
+</mj-section>

@@ -1,0 +1,34 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @client.full_name %></p>
+
+      <p>
+        Votre départ pour  approche, avez-vous pensez à contacter  pour lui communiquer votre heure d’arrivée ?
+        C’est bientôt le grand départ ! Votre séjour dans l’exploitation <%= @booking.offer.name %> commence bientôt !
+      </p>
+
+      <p>
+        <%= @booking.offer.farmer.full_name %> a tout préparé pour votre arrivée et vous attend avec impatience ;)
+      </p>
+
+      <p>
+        Nous vous invitons à lui passer un petit coup de fil au <%= @booking.offer.farmer.user.cellphone %> pour l’informer de votre heure d’arrivée et ainsi lui poser toutes les questions relatives à votre séjour.
+      </p>
+
+      <p>
+        On vous souhaite un super bon séjour, plein de beaux moments, de découvertes enrichissantes et de souvenirs inoubliables. 
+      </p>
+
+      <p>
+        Bonne route 😘 
+      </p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

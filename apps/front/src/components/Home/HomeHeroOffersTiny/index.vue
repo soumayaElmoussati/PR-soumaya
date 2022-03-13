@@ -1,0 +1,486 @@
+<template>
+  <div class="home-hero">
+    <client-only>
+      <div class="home-hero__image h_small">
+        <div class="wrap">
+          <h1
+            class="title title-all"
+            style="display: inline">
+            {{ $t("home.titles.tinyHouse") }} <br >
+            {{ $t("home.titles.insolitVacancy") }}
+          </h1>
+        </div>
+      </div>
+    </client-only>
+  </div>
+</template>
+
+<script>
+import 'jquery'
+
+export default {
+  name: 'HomeHeroOffersTiny'
+}
+</script>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/_variables.scss";
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #cacec7;
+  opacity: 1; /* Firefox */
+}
+
+.multiselect {
+  color: $agri-yellow;
+}
+
+.multiselect__option--group {
+  background: $agri-green !important;
+  color: $agri-white;
+}
+
+.multiselect__option--group--highlight {
+  background: $agri-green !important;
+  color: $agri-white;
+}
+
+.number-people-field {
+  width: 80px !important;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    width: 100% !important;
+  }
+}
+
+.searchbar-field-location {
+  background-color: $agri-green !important;
+  border: 1px solid white;
+  border-radius: 50px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.btn-discover {
+  background-color: $agri-yellow !important;
+  border-radius: 50px;
+  color: black;
+  margin-left: 40px;
+  padding: 5px 25px;
+  font-family: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-shadow: 0px 0px 10px black;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    margin-left: 0px;
+    width: 100%;
+  }
+}
+
+.btn-full-search {
+  margin-left: 10px !important;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.title-all {
+  font-size: 48px !important;
+  font-weight: 700;
+  line-height: 56px;
+  text-shadow: 1px 1px 2px black;
+  font-family: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.datepicker-arrival {
+  position: absolute;
+  bottom: 0px;
+}
+.datepicker-departure {
+  position: absolute;
+  bottom: 0px;
+  right: 100px;
+}
+.hide-input {
+  z-index: -99999999;
+  opacity: 0;
+  position: relative;
+}
+.image-container {
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: center;
+  width: 100%;
+  position: absolute;
+  height: 900px;
+  opacity: 0;
+}
+
+.slideshow {
+  overflow: hidden;
+  display: -webkit-box;
+  position: relative;
+  width: 100%;
+  min-height: 850px;
+  background-color: whitesmoke;
+  .empty-container {
+    height: 850px;
+  }
+  .hero-image {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+  }
+  .h-first {
+    opacity: 1;
+  }
+}
+.hero-content {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 150px;
+}
+
+.hero-wrap {
+  margin-left: auto;
+  margin-right: auto;
+  .title {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-right: 80px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .home-hero-titles {
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .home-hero-titles {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+.home-hero__image {
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0px -100px 140px 0px #0000008c;
+}
+
+.home-hero-titles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  .hh-sub {
+    text-align: center;
+    h2 {
+      margin: 0px;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 12px 0;
+      color: white;
+    }
+    h3 {
+      margin: 0px;
+      font-size: 15px;
+      font-weight: 400;
+      margin: 12px 0;
+      color: white;
+    }
+  }
+}
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  display: -webkit-box;
+  h1,
+  h2,
+  h3 {
+    user-select: none;
+  }
+
+  & > .wrap {
+    display: flex;
+    height: 100%;
+    flex: 1;
+
+    @media only screen and (max-width: $breakpoint-tablet) {
+      padding: 0 16px;
+    }
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: auto 0;
+  }
+
+  &__image {
+    display: flex;
+    min-height: 550px;
+    width: 100%;
+    background-color: $agri-grey;
+    background-image: url("~assets/img/home/tiny.png");
+    background-size: cover;
+    background-position: center;
+
+    @media only screen and (max-width: $breakpoint-mobile-l) {
+      padding: 0 16px;
+    }
+
+    .wrap {
+      height: 100%;
+      margin: auto;
+      margin-top: 150px;
+
+      .title {
+        font-size: 36px;
+        position: absolute;
+        margin-top: 4em;
+        padding: 3em 3em;
+        @media only screen and (max-width: $breakpoint-mobile-l) {
+          margin-top: 0em;
+          font-size: 35px !important;
+          padding: 0 1em;
+        }
+        @media only screen and (min-width: $breakpoint-mobile-m) {
+          margin-top: 0em;
+          padding: 0;
+          font-size: 35px !important;
+        }
+        @media only screen and (min-width: $breakpoint-tablet) {
+          padding: 0px 2em;
+        }
+        @media only screen and (min-width: $breakpoint-laptop-m) {
+          padding: 0px 3em;
+        }
+        @media only screen and (min-width: $breakpoint-laptop-l) {
+          padding: 3em 3em;
+        }
+      }
+    }
+  }
+
+  &__content {
+    background-color: $primary;
+    color: white;
+    padding: 32px 0;
+
+    @media only screen and (max-width: $breakpoint-mobile-l) {
+      padding: 32px 16px;
+    }
+
+    .wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 16px;
+
+      @media only screen and (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr;
+      }
+
+      .body-1 {
+        color: rgba(white, 0.7);
+      }
+
+      .headline {
+        color: white;
+      }
+    }
+  }
+}
+@media only screen and (max-width: $breakpoint-mobile-l) {
+  .wrap {
+    width: 90%;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  .title {
+    margin-right: 0px !important;
+    justify-content: start !important;
+  }
+}
+@media only screen and (max-width: $breakpoint-tablet) {
+  .image-container {
+    background-position-x: -200px !important;
+  }
+}
+
+.search-bar {
+  border-radius: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 10px;
+  .inputWithIcon {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    input {
+      width: 100%;
+      border-radius: 25px;
+      margin: 8px 0;
+      outline: none;
+      padding: 8px;
+      box-sizing: border-box;
+      transition: 0.3s;
+      background-color: $agri-green;
+      color: white;
+      border: none;
+    }
+
+    input {
+      padding-left: 40px;
+    }
+
+    i {
+      font-size: 1.4rem;
+      position: absolute;
+      left: 0;
+      top: 12px;
+      padding: 9px 8px;
+      color: white !important;
+      transition: 0.3s;
+    }
+  }
+  .buttons {
+    margin-top: auto;
+    margin-bottom: auto;
+    button {
+      width: 100%;
+    }
+  }
+  .wi-spinner {
+    width: 127px;
+  }
+
+  @media only screen and (max-width: $breakpoint-tablet) {
+    .buttons {
+      margin-top: 0px;
+      margin-bottom: 10px !important;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+    width: 100%;
+
+    grid-template-columns: auto auto auto;
+
+    .searchbar-location {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+
+    .searchbar-activity {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+
+    .searchbar-date1 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .searchbar-date2 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .searchbar-count {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+  }
+}
+
+.h_small {
+  min-height: 850px !important;
+}
+
+.cust::v-deep .multiselect {
+  min-width: 250px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  .multiselect__tags {
+    min-height: 50px;
+    background-color: $agri-green !important;
+    border: none;
+    border-radius: 50px;
+  }
+  .multiselect__select {
+    top: calc(50% - 20px);
+  }
+  .multiselect__placeholder {
+    font-size: 13px;
+    margin-top: 10px;
+    color: $third-text;
+    font-style: italic;
+  }
+  .multiselect__input {
+    padding-top: 7px !important;
+    padding-left: 0px !important;
+  }
+}
+
+.cust {
+  position: relative;
+  i {
+    z-index: 100;
+    line-height: 0px;
+    font-size: 1.4rem;
+    color: white;
+    transition: 0.3s;
+    margin-top: 4vh;
+    @media only screen and (max-width: $breakpoint-tablet) {
+      margin-top: 2vh;
+      margin-left: 1vh;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .h_small {
+    min-height: 735px !important;
+  }
+}
+
+.form-inline-full {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  background-color: $agri-green;
+  border-radius: 50px;
+  padding: 15px 25px;
+  position: absolute;
+  top: 45em;
+  left: 8em;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    left: 0em;
+    width: 100%;
+    top: 40em;
+    border-radius: 0px 0px 50px 50px;
+    padding: 10px 0px;
+  }
+}
+</style>

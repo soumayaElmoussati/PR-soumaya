@@ -1,0 +1,1 @@
+json.extract! income, :id, :state, :offer_id, :start_date, :end_date, :period_name, :note, :expenses_balance, :lodging_income_balance, :farmer_balance, :housework_income_balance, :annexes_incomes_balance, :total_farmer_balance, :total_offer_income, :farmer_expenses

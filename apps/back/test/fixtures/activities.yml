@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  slug: MyString
+  people_count: 1
+  price_per_person: 1
+  additional_traveler_price: 1
+  state: 1
+  farmer: one
+
+two:
+  name: MyString
+  slug: MyString
+  people_count: 1
+  price_per_person: 1
+  additional_traveler_price: 1
+  state: 1
+  farmer: two

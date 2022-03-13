@@ -1,0 +1,11 @@
+Bonjour <%= @booking.offer.farmer.user.first_name %>,
+
+Vous venez d’accepter la demande de réservation de <%= @client.full_name %> pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %>  au <%= @booking.departure_date.strftime("%d/%m/%Y") %> pour <%= @booking.people_count %> personnes.
+
+Nous avons adressé une demande de paiement à <%= @client.full_name %> qui a 24h pour payer et valider définitivement sa réservation. Merci de garder l’option d’ici là ! 
+
+Une fois que ce paiement sera effectué, nous vous enverrons une confirmation par mail avec les coordonnées de <%= @client.full_name %>.
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

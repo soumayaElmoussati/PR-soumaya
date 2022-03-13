@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  activity: one
+  accessible: false
+  additional_rules: MyString
+
+two:
+  activity: two
+  accessible: false
+  additional_rules: MyString

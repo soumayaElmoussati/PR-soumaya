@@ -1,0 +1,8 @@
+[{"code":"discovery","name":"Découverte de l'exploitation", "img":"../static/activities/discovery.svg"},
+  {"code":"meeting_animals","name":"Rencontre avec les animaux", "img":"../static/activities/meeting.svg"},
+  {"code":"milking_animals","name":"Participer à la traite", "img":"../static/activities/milking.svg"},
+  {"code":"tasting","name":"Dégustation de produits", "img":"../static/activities/tasting.svg"},
+  {"code":"birth_animal","name":"Assister à des naissances", "img":"../static/activities/birth.svg"},
+  {"code":"stroll","name":"Balade (en calèche ou tracteur) ", "img":"../static/activities/stroll.svg"},
+  {"code":"harvest","name":"Participer à la récolte", "img":"../static/activities/harvest.svg"},
+  {"code":"craft","name":"Fabrications de produits", "img":"../static/activities/craft.svg"}]

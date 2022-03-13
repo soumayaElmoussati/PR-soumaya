@@ -1,0 +1,21 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @booking.offer.farmer.user.first_name %></p>
+
+      <p>
+        <%= @client.full_name %> n’a pas effectué le paiement pour la réservation de <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>. Sa demande de réservation a donc expiré.
+      </p>
+
+      <p>
+        Nous restons à votre disposition pour toutes questions.
+      </p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-agriculteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

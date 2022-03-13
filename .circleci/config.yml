@@ -1,0 +1,50 @@
+version: 2
+jobs:
+  build_front:
+    working_directory: ~/front
+    docker:
+      - image: circleci/node:10.14.1
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            cd apps/front
+            npm ci
+      - run:
+          name: Run build
+          command: |
+            cd apps/front
+            npm run build
+      - persist_to_workspace:
+          root: ~/front
+          paths:
+            - apps/front
+
+  front_misc:
+    working_directory: ~/front
+    docker:
+      - image: circleci/node:10.14.1
+    steps:
+      - attach_workspace:
+          at: ~/front
+      - run:
+          name: Lint files
+          command: |
+            cd apps/front
+            npm run lint
+
+      - run:
+          name: Audit for vulnerabilities
+          command: |
+            cd apps/front
+            npm audit --level=moderate
+
+workflows:
+  version: 2
+  front:
+    jobs:
+      - build_front
+      - front_misc:
+          requires:
+            - build_front

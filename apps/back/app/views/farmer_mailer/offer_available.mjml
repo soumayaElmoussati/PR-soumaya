@@ -1,0 +1,32 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <p>C'est parti <%= @farmer.user.first_name %> !</p>
+
+      <p>
+        Votre annonce de logement a été publiée, vous pouvez dès maintenant recevoir des demandes de réservation.
+      </p>
+
+      <p>
+        N’oubliez pas que vous pouvez à tout moment mettre à jour vos disponibilités et vos tarifs en vous reconnectant sur votre compte AgriVillage.
+      </p>
+
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in">
+      VOIR MON ANNONCE
+    </mj-button>
+
+    <mj-text align="left">
+
+      <p>
+        L'équipe AgriVillage
+      </p>
+
+      <p>
+        Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-agriculteurs">ici</a>) ou appelez-nous au 06.01.35.07.54
+      </p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

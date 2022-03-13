@@ -1,0 +1,43 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <p><b>Bienvenue sur AgriVillage <%= @farmer.full_name %> !</b></p>
+
+      <p>
+        Vous voilà membre de la communauté AgriVillage, la plateforme dédiée à l’agritourisme. <br> <br> Ensemble faisons la promotion de l’agriculture. Proposez vos chambres d’hôtes, gîtes ou logements insolites.
+      </p>
+
+      <p>
+        Notre objectif : inciter les citadins à découvrir votre beau métier et à comprendre le milieu agricole !
+      </p>
+
+      <p>
+        <b>Déposez dès maintenant et gratuitement votre annonce et augmentez vos revenus en hébergeant des personnes intéressées par l’agriculture. </b>
+      </p>
+
+      <p>
+        Pour vous connecter sur votre compte AgriVillage, voici votre identifiant: <%= @farmer.user.email %>
+      </p>
+
+      <p>
+        Si besoin appuyez sur « Mot de passe oublié »
+      </p>
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in">
+      JE DEPOSE MON ANNONCE
+    </mj-button>
+
+    <mj-text align="left">
+
+      <p>
+        L'équipe AgriVillage
+      </p>
+
+      <p>
+        Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-agriculteurs">ici</a>) ou appelez-nous au 06.01.35.07.54
+      </p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

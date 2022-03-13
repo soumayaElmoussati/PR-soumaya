@@ -1,0 +1,21 @@
+Bonjour <%= @client.full_name %>
+
+Votre paiement de <%= Money.new(@booking.total, "EUR") %>€ a bien été reçu ! Nous avons le plaisir de vous confirmer la réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %> <%= @booking.people_count %> personnes
+
+Voici les informations concernant le logement :
+Agriculteur : <%= @booking.offer.farmer.full_name %>
+Mail : <%= @booking.offer.farmer.user.email %>
+Téléphone : <%= @booking.offer.farmer.user.cellphone %>
+Adresse : <%= @booking.offer.address.street_name %> <%= @booking.offer.address.postal_code %> <%= @booking.offer.address.city %> <%= @booking.offer.address.country_code %>
+
+
+<% if @booking.offer.annexe_information %>
+  Informations annexes :
+  <%= @booking.offer.annexe_information %>
+<% end %>
+
+Merci de penser à rentrer en contact avec <%= @booking.offer.farmer.user.first_name %> avant pour confirmer l’heure à laquelle vous arriverez.
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

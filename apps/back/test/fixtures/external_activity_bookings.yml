@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  start: 2020-08-03 11:35:24
+  end: 2020-08-03 11:35:24
+  source: MyString
+  notes: MyText
+  activity: one
+
+two:
+  uid: MyString
+  start: 2020-08-03 11:35:24
+  end: 2020-08-03 11:35:24
+  source: MyString
+  notes: MyText
+  activity: two

@@ -1,0 +1,70 @@
+version: "2"
+services:
+  db:
+    build: apps/db
+    environment:
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+    volumes:
+      - ./apps/back/tmp/db:/var/lib/postgresql/data
+      - ./apps/back/lib/backup:/root/Backup
+      - ./backups:/root/backups
+
+  redis:
+    image: redis:5.0.4
+    command: ["redis-server", "--appendonly", "yes"]
+
+  sidekiq:
+    build: apps/back
+    command: bash -c "rm -rf tmp/pids && bundle exec sidekiq -q default -q mailers --verbose"
+    env_file:
+     - ./.env
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - RAILS_ENV=production
+      - BACK_DATABASE_PASSWORD=$POSTGRES_PASSWORD
+      - SECRET_KEY_BASE=$SECRET_KEY_BASE
+      - RAILS_SERVE_STATIC_FILES=true
+    volumes:
+      - ~/.ssh:/root/.ssh
+      - ./apps/back:/back
+      - ~/.profile
+    depends_on:
+      - db
+    links:
+      - redis
+
+  back:
+    build: apps/back
+    command: bash -c "rm -rf tmp/pids && rails s -p 3000 -e production"
+    env_file:
+     - ./.env
+    environment:
+      - RAILS_ENV=production
+      - BACK_DATABASE_PASSWORD=$POSTGRES_PASSWORD
+      - SECRET_KEY_BASE=$SECRET_KEY_BASE
+      - FRONT_DOMAIN=$FRONT_DOMAIN
+      - RAILS_SERVE_STATIC_FILES=true
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - ./apps/back:/back
+      - ~/.profile
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    links:
+      - redis
+      - sidekiq
+
+  front:
+    build: apps/front
+    command: bash -c "NODE_ENV=production npm start"
+    env_file:
+     - ./.env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8080
+    volumes:
+      - ./apps/front:/front
+    ports:
+      - 8080:8080

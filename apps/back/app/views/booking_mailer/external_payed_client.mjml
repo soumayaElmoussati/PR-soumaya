@@ -1,0 +1,58 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @client.full_name %></p>
+
+      <p>
+        Nous vous confirmons votre réservation ainsi que la réception de votre paiement pour la Tiny House <%= @booking.offer.name %> via <%= @booking.channel %>.
+      </p>
+
+      <p>
+        <a href="https://www.agrivillage.fr">AgriVillage</a> est la plateforme de gestion locative qui vous accompagne de votre réservation jusqu’à la fin de votre séjour. Le but étant de dégager du temps pour l’agriculteur ainsi que d’être disponible pour vous.
+      </p>
+
+      <p>
+        Vous pouvez dès à présent vous rendre sur <a href="https://www.agrivillage.fr">AgriVillage</a> et vous connecter à votre espace personnel:
+        Identifiant : <%= @client.user.email %>
+      </p>
+
+      <p>
+        Mot de passe: "agrivillage" (vous pouvez le modifier en cliquant sur mot de passe oublié)
+      </p>
+
+      <p>
+        Une fois connecté, vous pouvez choisir des services annexes proposées par l’agriculteur
+        <% @booking.offer.annexe_services.each do |service| %>
+          - <%= service.name %> <br>
+        <% end %>
+      </p>
+
+      <p>
+        Vous pouvez également contacter votre hôte et lui indiquer vos heures d’arrivées:
+        (<%= @booking.offer.farmer.full_name %>/ <%= @booking.offer.farmer.user.email %> / <%= @booking.offer.farmer.user.cellphone %> / <%= @booking.offer.address.street_name %>, <%= @booking.offer.address.postal_code %> <%= @booking.offer.address.city %>)
+      </p>
+
+      <p>
+        Nous restons bien évidemment à votre disposition pour toutes questions éventuelles.
+        À bientôt sur <a href="https://www.agrivillage.fr">AgriVillage</a> 💚
+      </p>
+
+      <% if @booking.housework? %>
+        <p>
+          PS : Attention les frais de ménage sont à payer sur place (<%= @booking.housework_price %>€), merci de prévoir chèque ou liquide
+        </p>
+      <% end %>
+    </mj-text>
+
+    <mj-text align="left">
+
+      <p>Très belle journée,</p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

@@ -1,0 +1,13 @@
+
+Bonjour <%= @booking.offer.farmer.user.first_name %>,
+
+<%= @client.user.first_name %> vient malheureusement d’annuler sa réservation qui était prévue entre le <%= @booking.arrival_date.strftime("%d/%m/%Y") %> et le <%= @booking.departure_date.strftime("%d/%m/%Y") %>. 
+
+Nous allons mettre l’hébergement <%= @booking.offer.name %> en avant pour qu’il soit re-réservé sur cette période. On vous tient informé ;)
+
+Très belle journée, 
+
+Cordialement, 
+
+L’équipe AgriVillage 
+

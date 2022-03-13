@@ -1,0 +1,7 @@
+{
+  "name": "back",
+  "private": true,
+  "dependencies": {
+    "mjml": "^4.4.0-beta.1"
+  }
+}

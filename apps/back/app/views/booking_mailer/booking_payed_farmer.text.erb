@@ -1,0 +1,30 @@
+Bonjour <%= @booking.offer.farmer.user.first_name %>
+
+
+Nous avons le plaisir de vous confirmer la réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %> <%= @booking.people_count %> personnes
+
+Voici le detail du prix:
+
+Logement: <%= Money.new(@booking.lodging_cost, "EUR") %>€
+Services: <%= Money.new(@booking.total_services, "EUR") %>€
+Commission AgriVillage: <%= Money.new(@booking.commission_fee, "EUR") %>€
+
+Total du versement: <%= Money.new(@booking.farmer_deposit, "EUR") %>€
+
+Le versement s’effectuera 24h après l’arrivée de votre visiteur.
+
+Coordonnées des clients:
+
+Client: <%= @client.full_name %>
+Mail: <%= @client.user.email %>
+Téléphone: <%= @client.user.cellphone %>
+
+Pour rappel voici les conditions d’annulation:
+
+Annulation par le voyageur 30 jours avant l’arrivée: remboursement à 100%
+Annulation par le voyageur entre 15 et 30 jours avant l’arrivée: remboursement à 50%
+Annulation après 15 jours: aucun remboursement
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

@@ -1,0 +1,67 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <%if (@booking.arrival_date.to_time - Time.now) > 30.days %>
+        <p>Bonjour <%= @booking.offer.farmer.full_name %> !</p>
+
+        <p>
+          Nous vous informons que <%= @client.full_name %> a malheureusement annulé sa réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+        </p>
+
+        <p>
+          Votre client ayant annulé sa réservation plus de 30 jours avant son arrivée, il sera integralement remboursés.
+        </p>
+
+        <p>
+          Nous allons mettre en avant votre offre afin que votre hébergement puisse être loué sur ces dates.
+        </p>
+      <% elsif (@booking.arrival_date.to_time - Time.now) < 30.days && (@booking.arrival_date.to_time - Time.now) > 15.days %>
+        <p>Bonjour <%= @booking.offer.farmer.full_name %> !</p>
+
+        <p>
+          Nous vous informons que <%= @client.full_name %> a malheureusement annulé sa réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+        </p>
+
+        <p>
+          Votre client ayant annulé sa réservation entre 15 et 30 jours avant son arrivée, il ne sera remboursé qu’à 50%. </br>
+          Vous recevrez donc un virement d’une valeur de 50% du montant de la réservation sous 5 jours ouvrables.
+        </p>
+
+        <p>
+          Nous allons mettre en avant votre offre afin que votre hébergement puisse être loué sur ces dates.
+        </p>
+      <% elsif (@booking.arrival_date.to_time - Time.now) < 15.days %>
+        <p>Bonjour <%= @booking.offer.farmer.full_name %> !</p>
+
+        <p>
+          Nous vous informons que <%= @client.full_name %> a malheureusement annulé sa réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+        </p>
+
+        <p>
+          Votre client ayant annulé sa réservation moins de 15 jours avant son arrivée, il ne sera pas remboursé. </br>
+          Vous recevrez donc un virement d’une valeur de 100% du montant de la réservation sous 5 jours ouvrables.
+        </p>
+
+        <p>
+          Nous allons mettre en avant votre offre afin que votre hébergement puisse être loué sur ces dates.
+        </p>
+      <% end %>
+
+    </mj-text>
+
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in">
+        GERER MES RESERVATIONS
+    </mj-button>
+
+    <mj-text align="left">
+      <p>Nous restons à votre disposition pour toutes questions.</p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-agriculteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+    
+  </mj-column>
+</mj-section>

@@ -1,0 +1,172 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <p> Bonjour <%= @client.user.first_name %>, </p>
+      <p> Vous avez réservé un ou plusieurs services annexes lors de votre séjour dans l'hébergement <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %> pour <%= @booking.people_count %> personne(s). </p>
+      <p> Voici, pour rappel, le résumé des services annexes pré-réservés :</p>
+    </mj-text>
+
+    <mj-table>
+      <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">
+        <th style="padding: 0 15px 0 0;">Service</th>
+        <th style="padding: 0 15px;">Nombre de personnes</th>
+        <th style="padding: 0 0 0 15px;">Prix</th>
+        <th style="padding: 0 0 0 15px;">Message</th>
+      </tr>
+      <% if @booking.panier_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Panier repas</td>
+          <td style="padding: 0 15px;"><%= @booking.panier_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.panier_total %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.panier_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.bike_rent_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Location de vélo</td>
+          <td style="padding: 0 15px;"><%= @booking.bike_rent_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.bike_rent_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.bike_rent_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.breakfast_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Petit déjeuner</td>
+          <td style="padding: 0 15px;"><%= @booking.breakfast_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.breakfast_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.breakfast_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.packed_lunch_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Panier repas</td>
+          <td style="padding: 0 15px;"><%= @booking.packed_lunch_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.packed_lunch_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.packed_lunch_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.cooking_workshop_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Atelier Cuisine</td>
+          <td style="padding: 0 15px;"><%= @booking.cooking_workshop_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.cooking_workshop_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.cooking_workshop_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.serenity_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Activité bien-être</td>
+          <td style="padding: 0 15px;"><%= @booking.serenity_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.serenity_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.serenity_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.spa_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Accès Spa</td>
+          <td style="padding: 0 15px;"><%= @booking.spa_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.spa_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.spa_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.car_rent_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Location de voiture</td>
+          <td style="padding: 0 15px;"><%= @booking.car_rent_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.car_rent_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.car_rent_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.station_ride_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Trajet Gare Ferme</td>
+          <td style="padding: 0 15px;"><%= @booking.station_ride_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.station_ride_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.station_ride_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.animal_space_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Espace nuit pour animal</td>
+          <td style="padding: 0 15px;"><%= @booking.animal_space_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.animal_space_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.animal_space_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.host_table_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Table d'hôte</td>
+          <td style="padding: 0 15px;"><%= @booking.host_table_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.host_table_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.host_table_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.washing_kit_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Lave-linge/sèche-linge</td>
+          <td style="padding: 0 15px;"><%= @booking.washing_kit_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.washing_kit_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.washing_kit_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.bbq_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Barbecue</td>
+          <td style="padding: 0 15px;"><%= @booking.bbq_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.bbq_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.bbq_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.riding_lesson_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Cours d'équitation</td>
+          <td style="padding: 0 15px;"><%= @booking.riding_lesson_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.riding_lesson_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.riding_lesson_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.horse_ride_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Balade à cheval/en âne</td>
+          <td style="padding: 0 15px;"><%= @booking.horse_ride_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.horse_ride_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.horse_ride_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.riding_course_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Stage d’équitation</td>
+          <td style="padding: 0 15px;"><%= @booking.riding_course_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.riding_course_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.riding_course_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.riding_introduction_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Initiation à l’équitation</td>
+          <td style="padding: 0 15px;"><%= @booking.riding_introduction_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.riding_introduction_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.riding_introduction_msg %></td>
+        </tr>
+      <% end %>
+      <% if @booking.immersion_nb.present? %>
+        <tr>
+          <td style="padding: 0 15px 0 0;">Immersion</td>
+          <td style="padding: 0 15px;"><%= @booking.immersion_nb %></td>
+          <td style="padding: 0 15px;"><%= @booking.immersion_price %>€</td>
+          <td style="padding: 0 0 0 15px;"><%= @booking.immersion_msg %></td>
+        </tr>
+      <% end %>
+    </mj-table>
+
+    <mj-text>
+      <p> Total <%= Money.new(@booking.annexe_services_total, "EUR") %>€ </p>
+      <p> Le paiement de ces services se fait sur place, en direct avec votre hôte agriculteur Pensez à prévoir du liquide ou un chèque ! </p>
+      <p> Très belle journée, </p>
+      <p> Cordialement </p>
+      <p> L’équipe AgriVillage </p>
+    </mj-text>
+  </mj-column>
+</mj-section>
+
+    

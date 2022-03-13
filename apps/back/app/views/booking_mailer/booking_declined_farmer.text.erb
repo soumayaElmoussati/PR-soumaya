@@ -1,0 +1,9 @@
+Bonjour <%= @booking.offer.farmer.user.first_name %>,
+
+Vous venez de refuser la demande de réservation de <%= @client.full_name %> pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+
+Le refus de cette réservation a bien été pris en compte et nous allons prévenir le client.
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

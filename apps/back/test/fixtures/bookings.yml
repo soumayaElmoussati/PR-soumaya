@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  client: one
+  offer: one
+  people_count: 1
+  arrival_date: 2018-12-03 23:50:07
+  departure_date: 2018-12-03 23:50:07
+  total: 1
+
+two:
+  status: 1
+  client: two
+  offer: two
+  people_count: 1
+  arrival_date: 2018-12-03 23:50:07
+  departure_date: 2018-12-03 23:50:07
+  total: 1

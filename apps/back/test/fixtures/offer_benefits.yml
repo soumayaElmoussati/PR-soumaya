@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cleaning_kit: false
+  toilet_paper: false
+  soap: false
+  household_linen: false
+  offer: one
+
+two:
+  cleaning_kit: false
+  toilet_paper: false
+  soap: false
+  household_linen: false
+  offer: two

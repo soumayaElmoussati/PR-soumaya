@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  star: 1
+  comment: MyText
+  stay_date: 2021-06-24
+  first_name: MyString
+  last_name: MyString
+  full_name: MyString
+
+two:
+  star: 1
+  comment: MyText
+  stay_date: 2021-06-24
+  first_name: MyString
+  last_name: MyString
+  full_name: MyString

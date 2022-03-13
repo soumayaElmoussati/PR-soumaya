@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer: one
+  start_date: 2019-04-12 12:10:53
+  end_date: 2019-04-12 12:10:53
+  price_period: 1
+
+two:
+  offer: two
+  start_date: 2019-04-12 12:10:53
+  end_date: 2019-04-12 12:10:53
+  price_period: 1

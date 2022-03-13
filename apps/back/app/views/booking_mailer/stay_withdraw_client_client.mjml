@@ -1,0 +1,55 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <%if (@booking.arrival_date.to_time - Time.now) > 30.days %>
+
+        <p>Bonjour <%= @client.full_name %> !</p>
+
+        <p>
+          Vous avez annulé votre séjour chez <%= @booking.offer.farmer.user.first_name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+        </p>
+
+        <p>
+          Votre annulation ayant eu lieu plus de 30 jours avant votre arrivée, vous serez integralement remboursés (sauf frais de dossier) dans les 5 jours ouvrables avec le mode de payement utilisé pour l'achat.
+        </p>
+
+      <% elsif (@booking.arrival_date.to_time - Time.now) < 30.days && (@booking.arrival_date.to_time - Time.now) > 15.days %>
+        <p>Bonjour <%= @client.full_name %> !</p>
+
+        <p>
+          Vous avez annulé votre séjour chez <%= @booking.offer.farmer.user.first_name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+        </p>
+
+        <p>
+          Votre annulation ayant eu lieu entre 15 et 30 jours avant votre arrivée, vous serez remboursés à 50% du montant de votre réservation hors frais de dossiers. Vous receverez votre remboursement dans les 5 jours ouvrables avec le mode de payement utilisé pour l'achat.
+        </p>
+
+      <% elsif (@booking.arrival_date.to_time - Time.now) < 15.days %>
+        <p>Bonjour <%= @client.full_name %> !</p>
+
+        <p>
+          Vous avez annulé votre séjour chez <%= @booking.offer.farmer.user.first_name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+        </p>
+
+        <p>
+          Votre annulation ayant eu lieu moins de 15 jours avant votre arrivée, votre réservation n'est pas remboursable
+        </p>
+      <% end %>  
+    </mj-text>
+
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/nos-offres">
+        CONSULTER TOUTES LES OFFRES
+    </mj-button>
+
+    <mj-text align="left">
+
+      <p>Nous restons à votre disposition pour toutes questions.</p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-agriculteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

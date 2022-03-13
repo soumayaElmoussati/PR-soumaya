@@ -1,0 +1,42 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <p>Félicitations <%= @farmer.user.first_name %> !</p>
+
+      <p>
+        Votre annonce <%= @offer.name %> a bien été enregistrée. Elle sera publiée par nos équipes dans les 48 heures.
+      </p>
+
+      <p>
+        Avez-vous pensé à tout ? voici quelques préconisations pour optimiser votre annonce :
+
+        <ul>
+          <li>Décrire votre habitation et votre exploitation</li>
+          <li>Détailler l’activité que vous proposez</li>
+          <li>Ajouter des photos (lumineuses) du logement et de l’exploitation</li>
+        </ul>
+
+      </p>
+
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in">
+      JE GERE MON ANNONCE
+    </mj-button>
+
+    <mj-text align="left">
+      <p>
+        Pour garantir la publication de votre offre le plus rapidement possible, n’hésitez pas à faire les modifications nécessaires
+      </p>
+
+      <p>
+        L'équipe AgriVillage
+      </p>
+
+      <p>
+        Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-agriculteurs">ici</a>) ou appelez-nous au 06.01.35.07.54
+      </p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

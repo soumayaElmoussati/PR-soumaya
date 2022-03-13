@@ -1,0 +1,7 @@
+<p>Bienvenue sur Agrivillage!</p>
+
+<p>Afin de valider votre compte, merci de cliquer sur le lien suivant :</p>
+
+<p><%= link_to 'Valider votre email', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Merci</p>

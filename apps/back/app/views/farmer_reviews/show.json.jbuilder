@@ -1,0 +1,1 @@
+json.partial! "farmer_reviews/farmer_review", farmer_review: @farmer_review

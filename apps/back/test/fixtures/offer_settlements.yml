@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer: one
+  baby_suitable: false
+  child_suitable: false
+  smooking_allowed: false
+  parties_allowed: false
+  additional_rules: MyString
+
+two:
+  offer: two
+  baby_suitable: false
+  child_suitable: false
+  smooking_allowed: false
+  parties_allowed: false
+  additional_rules: MyString

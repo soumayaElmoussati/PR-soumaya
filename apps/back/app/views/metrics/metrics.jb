@@ -1,0 +1,4 @@
+{
+  min_price: @prices.min,
+  max_price: @prices.max
+}

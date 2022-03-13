@@ -1,0 +1,17 @@
+Bonjour <%= @client.user.first_name %> !
+
+Votre demande de réservation pour le logement <%= @booking.offer.name %> a été transmise à notre hôte-agriculteur <%= @booking.offer.farmer.user.first_name %>
+
+Il dispose de 24 heures pour approuver ou refuser votre demande, mais nos AgriVillageois répondent souvent bien plus vite ;)
+
+Pour rappel, voici la demande transmise :
+<%= @booking.offer.name %> à <%= @booking.offer.address.city %>
+Du <%= @booking.arrival_date.strftime("%d/%m/%Y") %>  au <%= @booking.departure_date.strftime("%d/%m/%Y") %>
+A <%= Money.new(@booking.total, "EUR") %>€
+Pour <%= @booking.people_count %> personnes
+
+Dès que <%= @booking.offer.farmer.user.first_name %> aura répondu à votre requête, vous recevrez la demande de paiement par mail. Vous disposerez alors de 24h pour payer et valider définitivement votre réservation.
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

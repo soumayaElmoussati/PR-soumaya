@@ -1,0 +1,8 @@
+external_bookings_job: # a unique name for this schedule
+  class: FetchExternalBookingJob # the job class
+  cron: "0 6 * * *" # cron formatted schedule
+  queue: "default" # Sidekiq queue for job
+stay_reminder_job: # a unique name for this schedule
+  class: StayReminderJob # the job class
+  cron: "0 6 * * *" # cron formatted schedule
+  queue: "default" # Sidekiq queue for job

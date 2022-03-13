@@ -1,0 +1,27 @@
+Bonne nouvelle <%= @client.full_name %> !
+
+Votre demande de réservation pour le logement <%= @booking.offer.name %> a été acceptée par votre hôte-agriculteur <%= @booking.offer.farmer.user.first_name %>
+
+Pour valider définitivement votre réservation, merci d’effectuer le paiement de <%= Money.new(@booking.total, "EUR") %>€.
+
+Attention, vous disposez d'un délai de 24 heures avant que l’accord n'expire. Ne perdez pas de temps !
+
+Pour rappel voici les conditions d’annulation :
+
+Annulation par le voyageur 30 jours avant l’arrivée : remboursement à 100%
+
+Annulation par le voyageur entre 15 et 30 jours avant l’arrivée : remboursement à 50%
+
+Annulation après 15 jours, aucun remboursement
+
+Récapitulatif de l’offre :
+<%= @booking.offer.name %>
+Du <%= @booking.arrival_date.strftime("%d/%m/%Y") %>  au <%= @booking.departure_date.strftime("%d/%m/%Y") %>
+<%= Money.new(@booking.total, "EUR") %>€
+<%= @booking.people_count %> personnes
+
+Nous espérons que vous passerez un agréable séjour chez <%= @booking.offer.farmer.user.first_name %>
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

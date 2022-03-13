@@ -1,0 +1,35 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align=left>
+      <p>Bonjour <%= @booking.offer.farmer.user.first_name %></p>
+      <p> Une nouvelle réservation pour la Tiny House <%= @booking.offer.name %> vient d’être effectuée :</p>
+      <ul>
+        <li>Nom : <%= @client.full_name %></li>
+        <li>Nombre de personnes : <%= @booking.people_count %></li>
+        <li> Date d’arrivée : <%= @booking.arrival_date.strftime("%d/%m/%Y") %></li>
+        <li>Date de départ : <%= @booking.departure_date.strftime("%d/%m/%Y") %></li>
+        <li>Numéro de téléphone : <%= @client.user.cellphone %></li>
+      </ul>
+      <p> Total : <%= Money.new(@booking.farmer_deposit, "EUR") %>€ </p>
+      <p> Pour rappel, voici les réservations à venir : </p>
+    </mj-text>
+    <mj-table>
+      <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">
+        <th style="padding: 0 15px 0 0;">Client</th>
+        <th style="padding: 0 15px;">date d'arrivée</th>
+        <th style="padding: 0 0 0 15px;">date de depart</th>
+      </tr>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td style="padding: 0 15px 0 0;"><%= booking.client.user.first_name %></td>
+          <td style="padding: 0 15px;"><%= booking.arrival_date.strftime("%d/%m/%Y") %></td>
+          <td style="padding: 0 0 0 15px;"><%= booking.departure_date.strftime("%d/%m/%Y") %></td>
+        </tr>
+      <% end %>
+    </mj-table>
+    <mj-text>
+      <p> Très belle journée, </p>
+      <p> L’équipe AgriVillage </p>
+    </mj-text>
+  </mj-column>
+</mj-section>

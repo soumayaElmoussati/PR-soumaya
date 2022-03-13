@@ -1,0 +1,39 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <p>Bonjour <%= @client.user.first_name %> !</p>
+
+      <p>
+        Votre demande de réservation pour le logement <%= @booking.offer.name %> a été transmise à notre hôte-agriculteur <%= @booking.offer.farmer.user.first_name %>
+      </p>
+
+      <p>
+        <b>Il dispose de 24 heures pour approuver ou refuser votre demande, mais nos AgriVillageois répondent souvent bien plus vite ;)</b>
+      </p>
+
+      <p>
+        Pour rappel, voici la demande transmise : <br>
+        <%= @booking.offer.name %> à <%= @booking.offer.address.city %> <br>
+        Du <%= @booking.arrival_date.strftime("%d/%m/%Y") %>  au <%= @booking.departure_date.strftime("%d/%m/%Y") %>
+        A <%= Money.new(@booking.total, "EUR") %>€ <br>
+        Pour <%= @booking.people_count %> personnes
+      </p>
+
+      <p>
+        Dès que <%= @booking.offer.farmer.user.first_name %> aura répondu à votre requête, vous recevrez la demande de paiement par mail. Vous disposerez alors de 24h pour payer et valider définitivement votre réservation.
+      </p>
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in-client">
+        SUIVRE MA RESERVATION
+    </mj-button>
+
+    <mj-text align="left">
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+    </mj-text>
+
+
+  </mj-column>
+</mj-section>

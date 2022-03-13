@@ -1,0 +1,35 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @client.full_name %> !</p>
+
+      <p>
+        Malheureusement, <%= @booking.offer.farmer.user.first_name %> a été contraint d’annuler votre réservation <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+      </p>
+
+      <p>
+        Nous vous adresserons le remboursement total de votre réservation sous 5 jours ouvrés.
+      </p>
+
+      <p>
+        Nous vous prions de nous excuser pour ce désagrément.
+      </p>
+
+      <p>
+        N’hésitez pas à retourner sur notre site, nous sommes certains que d’autres offres pourraient vous intéresser.
+      </p>
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/nos-offres">
+      CONSULTER TOUTES LES OFFRES
+    </mj-button>
+
+    <mj-text align="left">
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

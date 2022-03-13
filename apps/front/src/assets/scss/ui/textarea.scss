@@ -1,0 +1,8 @@
+@import "./../variables";
+@import "./../mixins";
+
+.textarea{
+  padding: 20px;
+  height: auto;
+  min-height: 150px;
+}

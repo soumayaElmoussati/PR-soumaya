@@ -1,0 +1,36 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @booking.offer.farmer.full_name %>,</p>
+
+      <p>
+        Vous pouvez désormais partager votre avis via une enquête de satisfaction très rapide.
+      </p>
+
+      <p>
+        Pour donner un retour du séjour de <%= @client.full_name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> à <%= @booking.departure_date.strftime("%d/%m/%Y") %>, c’est par <a href="https://www.agrivillage.fr/<%= @booking.id %>/new-farmer-review">ici</a>
+      </p>
+
+      <p>
+        Vos retours nous sont très précieux car ils nous aident à nous améliorer encore, encore et encore :)
+      </p>
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in">
+      Je donne mon avis
+    </mj-button>
+
+    <mj-text align="left">
+
+      <p>
+        Merci à vous cher Agrivillageois et à bientôt chez AgriVillage ;)
+      </p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

@@ -1,0 +1,74 @@
+version: "2"
+services:
+  db:
+    build: apps/db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - postgres_backup:/root/Backup
+      - postgres_backups:/root/backups
+
+  mailcatcher:
+    image: dockage/mailcatcher:0.6.5
+    ports:
+      - 1080:1080
+      - 1025:1025
+
+  redis:
+    image: redis:5.0.4
+    command: ["redis-server", "--appendonly", "yes"]
+
+  sidekiq:
+    build: apps/back
+    command: bash -c "rm -rf tmp/pids && bundle exec sidekiq -q default -q mailers --verbose"
+    env_file:
+     - ./.env
+    environment:
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - ~/.ssh:/root/.ssh
+      - ./apps/back:/back
+    depends_on:
+      - db
+    links:
+      - redis
+
+  back:
+    build: apps/back
+    command: bash -c "rm -rf tmp/pids && rails s -b 0.0.0.0"
+    env_file:
+     - ./.env
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - FRONT_DOMAIN=$FRONT_DOMAIN
+    volumes:
+      - ~/.ssh:/root/.ssh
+      - ./apps/back:/back
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    links:
+      - mailcatcher
+      - redis
+      - sidekiq
+
+  front:
+    build: apps/front
+    command: npm run dev
+    env_file:
+     - ./.env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8080
+    volumes:
+      - ./apps/front:/front
+    ports:
+      - 8080:8080
+volumes:
+  postgres_data:
+  postgres_backup:
+  postgres_backups:
+
+

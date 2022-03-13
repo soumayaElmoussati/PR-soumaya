@@ -1,0 +1,23 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @client.full_name %></p>
+
+      <p>
+        "<%= @booking.offer.farmer.full_name%>" n'a pas répondu à votre demande de réservation dans les 48h. Votre demande a donc expiré.
+      </p>
+
+      <p>
+        La prochaine sera la bonne! Nous vous invitons à retourner sur AgriVillage et faire une nouvelle demande dans une autre ferme ;).
+      </p>
+
+    <mj-text align="left">
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

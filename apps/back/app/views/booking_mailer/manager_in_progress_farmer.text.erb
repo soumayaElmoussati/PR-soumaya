@@ -1,0 +1,19 @@
+
+Bonjour <%= @booking.offer.farmer.user.first_name %>,
+
+<%= @client.user.first_name %> commence son séjour dans la tiny house <%= @booking.offer.name %> dans 5 jours !
+
+Pour rappel, voici le détail de sa réservation :
+
+
+Date d’arrivée : <%= @booking.arrival_date.strftime("%d/%m/%Y") %> 
+Date de départ :  <%= @booking.departure_date.strftime("%d/%m/%Y") %> 
+Nombre de personnes : <%= @booking.people_count %> 
+Nom : <%= @client.full_name %>
+
+Très belle journée,
+
+Cordialement,
+
+L’équipe AgriVillage
+

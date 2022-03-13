@@ -1,0 +1,11 @@
+Bonjour <%= @booking.offer.farmer.user.first_name %>,
+
+Vous avez été contraint d’annuler la réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+
+Nous allons tenir informé <%= @client.full_name %> de cette annulation.
+
+Nous restons à votre disposition pour toutes questions.
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

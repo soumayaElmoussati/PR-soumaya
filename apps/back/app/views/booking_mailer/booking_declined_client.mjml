@@ -1,0 +1,28 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @client.full_name %>,</p>
+
+      <p>
+        Malheureusement le logement <%= @booking.offer.name %> n’est pas disponible sur les dates indiquées du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+      </p>
+
+      <p>
+        Pas de panique, AgriVillage a sûrement d’autres offres qui pourraient vous intéresser !
+      </p>
+
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/nos-offres">
+      CONSULTER TOUTES LES OFFRES
+    </mj-button>
+
+    <mj-text align="left">
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

@@ -1,0 +1,21 @@
+
+Bonjour <%= @client.full_name %>
+
+ Vous avez réservé un séjour dans l’hébergement <%= @booking.offer.name %> !!
+
+ <%= @booking.offer.farmer.user.first_name %> est super content de vous accueillir sur sa ferme et de partager son petit coin de paradis avec vous ;)
+
+L’adresse de la ferme est <%= @booking.offer.address.street_name %> <%= @booking.offer.address.postal_code %> <%= @booking.offer.address.city %> <%= @booking.offer.address.country_code %>
+
+Voici quelques informations a savoir sur votre séjour :
+<%= @booking.offer.annexe_information %>
+
+D’ici là, c’est nous, AgriVillage, qui nous chargerons de vous car pour alléger un peu son planning, <%= @booking.offer.farmer.user.first_name %> nous a chargé de la gestion de ses réservations. Promis, vous êtes entre de très bonnes mains ;)
+
+ Pour un séjour encore plus riche en expériences et en découvertes, <%= @booking.offer.farmer.user.first_name %> vous propose quelques services annexes lors de votre séjour disponible sur votre espace réservations
+
+ Si vous avez des questions, envoyez nous un mail à contact@agrivillage.fr on sera ravi de vous donner un coup de pouce. 
+
+ Très belle journée, 
+
+ L’équipe AgriVillage 

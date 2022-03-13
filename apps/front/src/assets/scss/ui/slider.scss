@@ -1,0 +1,10 @@
+$themeColor: #476456;
+$dotShadow: none;
+
+@import '~vue-slider-component/lib/theme/default.scss';
+
+.vue-slider-dot {
+  @at-root &-handle {
+    border: 2px solid $themeColor;
+  }
+}

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  responsable: false
+  offer: one
+  expense_date: 2021-02-22
+  total_ttc: 1.5
+  total_ht: 1.5
+  comment: MyText
+
+two:
+  responsable: false
+  offer: two
+  expense_date: 2021-02-22
+  total_ttc: 1.5
+  total_ht: 1.5
+  comment: MyText

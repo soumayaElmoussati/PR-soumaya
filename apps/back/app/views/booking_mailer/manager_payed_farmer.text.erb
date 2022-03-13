@@ -1,0 +1,17 @@
+
+Bonjour <%= @booking.offer.farmer.user.first_name %>
+
+ Une nouvelle réservation pour la Tiny House <%= @booking.offer.name %> vient d’être effectuée :
+
+
+Nom : <%= @client.full_name %>
+Nombre de personnes : <%= @booking.people_count %>
+Date d’arrivée : <%= @booking.arrival_date.strftime("%d/%m/%Y") %>
+Date de départ : <%= @booking.departure_date.strftime("%d/%m/%Y") %>
+Numéro de téléphone : <%= @client.user.cellphone %>
+
+ Total : <%= Money.new(@booking.farmer_deposit, "EUR") %>€ 
+
+ Très belle journée, 
+
+ L’équipe AgriVillage 

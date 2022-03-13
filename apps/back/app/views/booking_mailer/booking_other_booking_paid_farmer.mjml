@@ -1,0 +1,26 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @booking.offer.farmer.full_name %>,</p>
+
+      <p>
+        <%= @client.full_name %> vient de valider un séjour dans une autre ferme. Sa demande de réservation chez vous n'est donc malheureusement plus effective.
+      </p>
+
+      <p>
+        Pas d'inquiétude, nous allons mettre votre annonce en avant afin que votre hébergement puisse être loué sur ces dates ;).
+      </p>
+
+    <mj-text align="left">
+      <p>
+        Nous restons à votre disposition pour toutes questions.
+      </p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

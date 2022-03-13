@@ -1,0 +1,15 @@
+Bonjour <%= @client.full_name %>,
+
+Vous pouvez désormais donner votre avis via une enquête de satisfaction très rapide. 
+
+Pour partager votre expérience chez <%= @booking.offer.farmer.full_name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> à <%= @booking.departure_date.strftime("%d/%m/%Y") %>, c’est par <%= link_to "ici", "https://www.agrivillage.fr/#{@booking.id}/new-review" %>
+
+Vos retours sont très précieux pour les agriculteurs ainsi que pour les futurs voyageurs.
+
+<%= link_to "Je donne mon avis", "https://www.agrivillage.fr/#{@booking.id}/new-review" %>
+
+Merci à vous cher Agrivillageois et à bientôt chez AgriVillage ;)
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

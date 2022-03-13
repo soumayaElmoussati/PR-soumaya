@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  farmer: one
+  start_date: 2020-04-20
+  end_date: 2020-04-20
+  amount: 1
+  statut: false
+
+two:
+  farmer: two
+  start_date: 2020-04-20
+  end_date: 2020-04-20
+  amount: 1
+  statut: false

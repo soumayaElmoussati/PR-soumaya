@@ -1,0 +1,2 @@
+module OfferPricePeriodHelper
+end

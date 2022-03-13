@@ -1,0 +1,30 @@
+
+Bonjour <%= @client.full_name %>
+
+Nous vous confirmons votre réservation ainsi que la réception de votre paiement pour la Tiny House <%= @booking.offer.name %> via <%= @booking.channel %>.
+
+<%= link_to "AgriVillage", "https://www.agrivillage.fr" %> est la plateforme de gestion locative qui vous accompagne de votre réservation jusqu’à la fin de votre séjour. Le but étant de dégager du temps pour l’agriculteur ainsi que d’être disponible pour vous.
+
+Vous pouvez dès à présent vous rendre sur <%= link_to "AgriVillage", "https://www.agrivillage.fr" %> et vous connecter à votre espace personnel:
+Identifiant : <%= @client.user.email %>
+
+Mot de passe: "agrivillage" (vous pouvez le modifier en cliquant sur mot de passe oublié)
+
+Une fois connecté, vous pouvez choisir des services annexes proposées par l’agriculteur
+<% @booking.offer.annexe_services.each do |service| %>
+  - <%= service.name %>
+<% end %>
+
+Vous pouvez également contacter votre hôte et lui indiquer vos heures d’arrivées:
+(<%= @booking.offer.farmer.full_name %>/ <%= @booking.offer.farmer.user.email %> / <%= @booking.offer.farmer.user.cellphone %> / <%= @booking.offer.address.street_name %>, <%= @booking.offer.address.postal_code %> <%= @booking.offer.address.city %>)
+
+Nous restons bien évidemment à votre disposition pour toutes questions éventuelles.
+À bientôt sur <%= link_to "AgriVillage", "https://www.agrivillage.fr" %> 💚
+
+<% if @booking.housework? %>
+  PS : Attention les frais de ménage sont à payer sur place (<%= @booking.housework_price %>€), merci de prévoir chèque ou liquide   
+<% end %>
+
+Très belle journée, 
+
+L’équipe AgriVillage 

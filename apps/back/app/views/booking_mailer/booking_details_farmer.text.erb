@@ -1,0 +1,25 @@
+Bonjour <%= @booking.offer.farmer.user.first_name %> !
+
+Vous venez de recevoir une demande de réservation pour <%= @booking.offer.name %> !
+
+Détail du séjour :
+
+<%= @booking.offer.name %>
+Du <%= @booking.arrival_date.strftime("%d/%m/%Y") %>  au <%= @booking.departure_date.strftime("%d/%m/%Y") %>, pour <%= @booking.people_count %> personnes.
+Prix de la réservation: <%= Money.new(@booking.sub_total, "EUR") %>€
+Commission: <%= Money.new(@booking.commission_fee, "EUR") %>€
+Total versement: <%= Money.new(@booking.farmer_deposit, "EUR") %>€
+
+"A noter que s'il s'agit de votre première demande de réservation via AgriVillage il vous sera demandé de vous créer un compte sur Stripe, notre module de paiement, pour que nous puissons par la suite vous virer l'argent des réservations.
+
+C'est très facile à faire, ça ne prend que 2 minutes, et on est toujours disponibles pour vous aider donc n'hésitez pas à nous appeler au 06.01.35.07.54 si besoin."
+
+Si vous acceptez la réservation, une demande de paiement automatique parviendra à <%= @client.full_name %> Il aura alors 24H pour payer, ce qui validera définitivement la réservation.
+Pas d’inquiétude, nos visiteurs payent souvent bien plus vite. Nous vous tiendrons informé par mail.
+
+Connectez-vous à votre espace AgriVillage pour accepter ou refuser cette demande.
+Vous disposez de 24h pour répondre à votre visiteur, passé ce délai nous devrons annuler la demande.
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

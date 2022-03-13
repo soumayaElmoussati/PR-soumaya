@@ -1,0 +1,55 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonne nouvelle <%= @client.full_name %> !</p>
+
+      <p>
+        Votre demande de réservation pour le logement <%= @booking.offer.name %> a été acceptée par votre hôte-agriculteur <%= @booking.offer.farmer.user.first_name %>
+      </p>
+
+      <p>
+        Pour valider définitivement votre réservation, merci d’effectuer le paiement de <%= Money.new(@booking.total, "EUR") %>€.
+      </p>
+
+      <p>
+        Attention, vous disposez d'un délai de <b> 24 heures avant que l’accord n'expire. </b> Ne perdez pas de temps !
+      </p>
+
+      <p>
+        Pour rappel voici les conditions d’annulation :
+        <ul>
+          <li>Annulation par le voyageur 30 jours avant l’arrivée: remboursement à 100% </li>
+          <li>Annulation par le voyageur entre 15 et 30 jours avant l’arrivée: remboursement à 50% </li>
+          <li>Annulation après 15 jours: aucun remboursement</li>
+        </ul>
+      </p>
+
+      <p>
+        Récapitulatif de l’offre : <br>
+        <%= @booking.offer.name %> <br>
+        Du <%= @booking.arrival_date.strftime("%d/%m/%Y") %>  au <%= @booking.departure_date.strftime("%d/%m/%Y") %> <br>
+        <%= Money.new(@booking.total, "EUR") %>€ <br>
+        <%= @booking.people_count %> personnes
+      </p>
+
+      <p>
+        Nous espérons que vous passerez un agréable séjour chez <%= @booking.offer.farmer.user.first_name %>
+      </p>
+    </mj-text>
+
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in-client">
+        VOIR MA RESERVATION
+    </mj-button>
+
+    <mj-text align="left">
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+
+
+    </mj-text>
+  </mj-column>
+</mj-section>

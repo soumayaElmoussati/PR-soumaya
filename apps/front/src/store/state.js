@@ -1,0 +1,43 @@
+export default () => ({
+  user: {},
+  authHeaders: {},
+  farmer: null,
+  booking: {
+    from: null,
+    to: null,
+    peopleCount: 1,
+    adultCount: 1,
+    childCount: 0,
+    promocode: null,
+    breakfastopt: false,
+    linensopt: false,
+    cleaningopt: false
+  },
+  tinybooking: {},
+  activity_booking: {
+    from: null,
+    to: null,
+    peopleCount: 1
+  },
+  offers: [],
+  all_offers: [],
+  hostOffers: [],
+  offers_meta: {},
+  offer: null,
+  currentOffer: null,
+  activities: [],
+  all_activities: [],
+  activities_meta: {},
+  activity: null,
+  currentActivity: null,
+  currentOfferBookings: [],
+  currentActivityBookings: [],
+  SearchQuery: '',
+  SearchParams: {},
+  dataModal: [],
+  metrics: null,
+  incomes: [],
+  bookings: [],
+  expenses: [],
+  isLoading: true
+})

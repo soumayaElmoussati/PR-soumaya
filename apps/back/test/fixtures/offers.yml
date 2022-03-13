@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  farmer: one
+  name: MyString
+  slug: MyString
+  people_count: 
+  residence_type: 
+  price_per_person: 
+
+two:
+  farmer: two
+  name: MyString
+  slug: MyString
+  people_count: 
+  residence_type: 
+  price_per_person: 

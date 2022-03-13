@@ -1,0 +1,44 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @client.full_name %></p>
+
+      <p>
+        Votre paiement de <%= Money.new(@booking.total, "EUR") %>€ a bien été reçu ! Nous avons le plaisir de vous confirmer la réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %> <%= @booking.people_count %> personnes
+      </p>
+
+      <p>
+        Voici les informations concernant le logement : <br>
+        Agriculteur : <%= @booking.offer.farmer.full_name %> <br>
+        Mail : <%= @booking.offer.farmer.user.email %> <br>
+        Téléphone : <%= @booking.offer.farmer.user.cellphone %> <br>
+        Adresse : <%= @booking.offer.address.street_name %> <%= @booking.offer.address.postal_code %> <%= @booking.offer.address.city %> <%= @booking.offer.address.country_code %>
+      </p>
+
+      <p>
+        <% if @booking.offer.annexe_information %>
+          Informations annexes : <br>
+          <%= @booking.offer.annexe_information %>
+        <% end %>
+      </p>
+
+      <p>
+        Merci de penser à rentrer en contact avec <%= @booking.offer.farmer.user.first_name %> avant pour confirmer l’heure à laquelle vous arriverez.
+      </p>
+    </mj-text>
+
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in-client">
+      VOIR MA RESERVATION
+    </mj-button>
+
+    <mj-text align="left">
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

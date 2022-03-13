@@ -1,0 +1,31 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @booking.offer.farmer.full_name %></p>
+
+      <p>
+        <%= @client.full_name %> commence son séjour chez vous dans 2 jours !
+      </p>
+
+      <p>
+        Pour rappel, voici le détail de sa réservation :
+      </p>
+
+      <p>
+        <%= @booking.offer.name %> <br>
+        Du <%= @booking.arrival_date.strftime("%d/%m/%Y") %>  au <%= @booking.departure_date.strftime("%d/%m/%Y") %>, 
+        pour <%= @booking.people_count %> personnes. <br>
+      </p>
+
+      <p>
+        Très bonne journée,
+      </p>
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

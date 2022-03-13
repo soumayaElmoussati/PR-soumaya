@@ -1,0 +1,69 @@
+@import "./../variables";
+@import "./../mixins";
+
+::-webkit-input-placeholder { /* Edge */
+  color: white;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
+.input,
+.input2 {
+  border:none;
+  border-bottom:1px solid #757575;
+  height: 50px;
+
+  color: $primary-text;
+  font-size: 16px;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  appearance: none;
+
+  outline: none;
+  background-color: white;
+
+  transition: border 200ms;
+
+  &.has-error{
+    border-color: $danger;
+
+    &:focus{
+      @include shadow($danger);
+    }
+  }
+}
+
+.textarea {
+  border-bottom: 1px solid #707070;
+  font-size: 14px;
+  border-radius: 25px;
+  color: #476458;
+  font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.input2{
+  width: 100%;
+}
+
+.input-booking {
+  border-bottom: 0px !important;
+  background-color: #44933B !important;
+  color: white;
+  padding: 0px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.second-calendar {
+  border-left: 1px solid white;
+  @media only screen and (max-width: $breakpoint-mobile-l) {
+    border-top: 1px solid white;
+    border-left: none;
+  }
+}

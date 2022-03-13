@@ -1,0 +1,101 @@
+.btn-agri {
+  background-color: $agri-green;
+  color: $agri-white;
+  padding: 0px 15px;
+  border-radius: 50px;
+  box-shadow: 1px 1px 12px #555;
+
+  position: absolute;
+  font-size: 15px;
+}
+
+.btn-agri-previous {
+  background-color: $agri-green;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 1px 1px 12px #555;
+  font-size: 15px;
+  height: 50px;
+}
+
+.btn-agri-l {
+  background-color: $agri-green;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 1px 1px 12px #555;
+  width: 235px;
+  margin: auto;
+  @media only screen and (max-width: $breakpoint-mobile-m) {
+    width: 170px;
+  }
+}
+
+.btn-agri-contact {
+  background-color: $agri-green;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 1px 1px 12px #555;
+  width: 300px;
+  margin: auto;
+  @media only screen and (max-width: $breakpoint-mobile-m) {
+    width: 170px;
+  }
+}
+
+.btn-agri-services {
+  background-color: $agri-green;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 1px 1px 12px #555;
+  width: 150px;
+  margin: auto;
+  font-size: 12px;
+  @media only screen and (max-width: $breakpoint-mobile-m) {
+    width: 170px;
+  }
+}
+
+.btn-agri-yellow {
+  background-color: $agri-green-light;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 1px 1px 12px #555;
+  height: 50px;
+  font-size: 15px;
+}
+
+.btn-agri-yellow-cancel {
+  background-color: $agri-green-light;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 1px 1px 12px #555;
+  height: 50px;
+  font-size: 15px;
+  max-width: 250px;
+}
+
+.btn-agri-yellow-secondary {
+  background-color: $agri-green-light;
+  color: white;
+  font-size: 12px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 12px #555;
+}
+
+.btn-light {
+  border: 1px solid $agri-green-light;
+  color: $agri-green-light;
+  padding: 0px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn-become {
+  background-color: $agri-green-light;
+  color: white;
+  padding: 0px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

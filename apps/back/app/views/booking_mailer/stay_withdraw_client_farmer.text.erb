@@ -1,0 +1,36 @@
+
+<%if (@booking.arrival_date.to_time - Time.now) > 30.days %>
+Bonjour <%= @booking.offer.farmer.full_name %> !
+
+Nous vous informons que <%= @client.full_name %> a malheureusement annulé sa réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+
+Votre client ayant annulé sa réservation plus de 30 jours avant son arrivée, il sera integralement remboursés.
+
+Nous allons mettre en avant votre offre afin que votre hébergement puisse être loué sur ces dates.
+
+<% elsif (@booking.arrival_date.to_time - Time.now) < 30.days && (@booking.arrival_date.to_time - Time.now) > 15.days %>
+Bonjour <%= @booking.offer.farmer.full_name %> !
+
+Nous vous informons que <%= @client.full_name %> a malheureusement annulé sa réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+
+Votre client ayant annulé sa réservation entre 15 et 30 jours avant son arrivée, il ne sera remboursé qu’à 50%.
+Vous recevrez donc un virement d’une valeur de 50% du montant de la réservation sous 5 jours ouvrables.
+
+Nous allons mettre en avant votre offre afin que votre hébergement puisse être loué sur ces dates.
+  
+<% elsif (@booking.arrival_date.to_time - Time.now) < 15.days %>
+Bonjour <%= @booking.offer.farmer.full_name %> !
+
+Nous vous informons que <%= @client.full_name %> a malheureusement annulé sa réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+
+Votre client ayant annulé sa réservation moins de 15 jours avant son arrivée, il ne sera pas remboursé.
+Vous recevrez donc un virement d’une valeur de 100% du montant de la réservation sous 5 jours ouvrables.
+
+Nous allons mettre en avant votre offre afin que votre hébergement puisse être loué sur ces dates.
+<% end %>
+
+Nous restons à votre disposition pour toutes questions.
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

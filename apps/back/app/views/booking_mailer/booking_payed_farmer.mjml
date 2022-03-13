@@ -1,0 +1,59 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+
+      <p>Bonjour <%= @booking.offer.farmer.user.first_name %></p>
+
+      <p>
+        Nous avons le plaisir de vous confirmer la réservation pour <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %> <%= @booking.people_count %> personnes
+      </p>
+
+      <p>
+        Voici le detail du prix: <br>
+        <ul>
+          <li>Logement: <%= Money.new(@booking.lodging_cost, "EUR") %>€</li>
+          <li>Services: <%= Money.new(@booking.total_services, "EUR") %>€</li>
+          <li>Commission AgriVillage: <%= Money.new(@booking.commission_fee, "EUR") %>€</li>
+        </ul>
+
+        <b>Total du versement: <%= Money.new(@booking.farmer_deposit, "EUR") %>€</b>
+      </p>
+
+      <p>
+        Le versement s’effectuera 24h après l’arrivée de votre visiteur. <br>
+      </p>
+
+      <p>
+        <b>
+          Coordonnées des clients:<br>
+          <ul>
+            <li>Client: <%= @client.full_name %></li>
+            <li>Mail: <%= @client.user.email %></li>
+            <li>Téléphone: <%= @client.user.cellphone %></li>
+          </ul>
+        </b>
+      </p>
+
+      <p>
+        Pour rappel voici les conditions d’annulation:
+        <ul>
+          <li>Annulation par le voyageur 30 jours avant l’arrivée: remboursement à 100% </li>
+          <li>Annulation par le voyageur entre 15 et 30 jours avant l’arrivée: remboursement à 50% </li>
+          <li>Annulation après 15 jours: aucun remboursement</li>
+        </ul>
+      </p>
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in">
+      DEPOSER MON RIB
+    </mj-button>
+
+    <mj-text align="left">
+
+      <p>L'équipe AgriVillage</p>
+
+      <p>Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-agriculteurs">ici</a>) ou appelez-nous au 06.01.35.07.54</p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

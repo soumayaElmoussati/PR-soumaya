@@ -1,0 +1,15 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <p> Bonjour <%= @client.user.first_name %>, </p>
+      <p> C’est bientôt le grand départ ! Votre séjour dans la tiny house <%= @booking.offer.name %>” commence dans 5 jours youhou ! </p>
+      <p> <%= @booking.offer.farmer.user.first_name %> a tout préparé pour votre arrivée et vous attend avec impatience ;) </p>
+      <p> Nous vous invitons à lui passer un petit coup de fil au <%= @booking.offer.farmer.user.cellphone %> pour l’informer de votre heure d’arrivée. </p>
+      <p> Quelques informations importantes que vous pouvez retrouver sur : </p>
+
+      <p> On vous souhaite un super bon séjour, plein de beaux moments, de découvertes enrichissantes et de souvenirs inoubliables. </p>
+      <p> Bonne route 😘 </p>
+      <p> L’équipe AgriVillage </p>
+      </mj-text>
+  </mj-column>
+</mj-section>

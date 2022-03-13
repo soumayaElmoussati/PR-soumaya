@@ -1,0 +1,23 @@
+
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align=left>
+      <p>Bonjour <%= @client.user.first_name %></p>
+      <p> Vous avez réservé un séjour dans l’hébergement <%= @booking.offer.name %> !!</p>
+      <p> <%= @booking.offer.farmer.user.first_name %> est super content de vous accueillir sur sa ferme et de partager son petit coin de paradis avec vous ;)</p>
+      <p>L’adresse de la ferme est <%= @booking.offer.address.street_name %> <%= @booking.offer.address.postal_code %> <%= @booking.offer.address.city %> <%= @booking.offer.address.country_code %></p>
+      <p>Voici quelques informations a savoir sur votre séjour :</p>
+      <p> <%= @booking.offer.annexe_information %> </p>
+      <p>D’ici là, c’est nous, AgriVillage, qui nous chargerons de vous car pour alléger un peu son planning, <%= @booking.offer.farmer.user.first_name %> nous a chargé de la gestion de ses réservations. Promis, vous êtes entre de très bonnes mains ;)</p>
+      <p> Pour un séjour encore plus riche en expériences et en découvertes, <%= @booking.offer.farmer.user.first_name %> vous propose quelques services annexes lors de votre séjour </p>
+    </mj-text>
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in-client">
+      Services annexes
+    </mj-button>
+    <mj-text align=left>
+      <p> Si vous avez des questions, envoyez nous un mail à contact@agrivillage.fr on sera ravi de vous donner un coup de pouce. </p>
+      <p> Très belle journée, </p>
+      <p> L’équipe AgriVillage </p>
+    </mj-text>
+  </mj-column>
+</mj-section>

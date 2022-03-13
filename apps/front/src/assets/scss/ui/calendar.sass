@@ -1,0 +1,140 @@
+$height: 50px
+$width: 260px
+$color-one-light: #8392A7
+$color-one-dark: #68768A
+$color-white: #fff
+
+.ui-datepicker
+	background-color: #f7f2fc
+	width: 200px
+
+.ui-datepicker-inline
+	position: relative
+	width: 100%
+
+.ui-datepicker-header
+	height: 100%
+	line-height: 50px
+	background: $color-one-light
+	color: $color-white
+	margin-bottom: 10px
+
+.ui-datepicker-prev, .ui-datepicker-next
+	width: 20px
+	height: 20px
+	text-indent: 9999px
+	border: 2px solid $color-white
+	border-radius: 100%
+	cursor: pointer
+	overflow: hidden
+	margin-top: 14px
+
+.ui-datepicker-prev
+	float: left
+	margin-left: 12px
+	&:after
+		transform: rotate(45deg)
+		margin: -45px 0px 0px 6px
+
+.ui-datepicker-next
+	float: right
+	margin-right: 12px
+	&:after
+		transform: rotate(-135deg)
+		margin: -45px 0px 0px 4px
+
+.ui-datepicker-prev, .ui-datepicker-next
+	&:after
+		content: ''
+		position: absolute
+		display: block
+		width: 4px
+		height: 4px
+		border-left: 2px solid $color-white
+		border-bottom: 2px solid $color-white
+
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover, .ui-datepicker-prev:hover:after, .ui-datepicker-next:hover:after
+	border-color: $color-one-dark
+
+.ui-datepicker-title
+	text-align: center
+
+.ui-datepicker-calendar
+	width: 100%
+	text-align: center
+	thead
+		tr
+			th
+				span
+					display: block
+					width: 100%
+					color: $color-one-light
+					margin-bottom: 5px
+					font-size: 13px
+
+.ui-state-default
+	display: block
+	text-decoration: none
+	color: #b5b5b5
+	line-height: 33px
+	font-size: 17px
+	&:hover
+		background: rgba(0,0,0,0.02)
+
+.ui-state-highlight
+	color: $color-one-dark
+
+.ui-state-active
+	color: $color-one-dark
+	background-color: rgba(131, 146, 167, 0.12)
+	font-weight: 600
+
+.ui-datepicker-unselectable
+	.ui-state-default
+		color: #eee
+		border: 2px solid transparent
+
+.hide-input
+	z-index: -99999999
+	opacity: 0
+	position: relative
+
+.agrivillage-calendar-event
+	color: red
+	opacity: 0.7
+	height: 5em
+	border-radius: 50px !important
+	position: relative
+	left: 4em
+
+.fc-past
+	background: repeating-linear-gradient(45deg, #b9babf, #b9babf 10px, #868686 10px, #868686 22px)
+
+.fc-today, .fc-future
+	cursor: pointer
+	&:hover
+		background-color: grey
+
+.fc-content-skeleton
+	td:not(.fc-day-top):not(.fc-event-container)
+		&:hover
+			cursor: pointer
+			background-color: grey !important;
+			height: 122px;
+			position: relative;
+			top: -26px;
+			z-index: -1;
+
+.fc-content
+	text-align: center
+	.fc-title
+		color: black;
+		opacity: 1
+
+.unavailable-event-modal
+	overflow: initial !important
+
+.vdp-datepicker
+	.cell
+		&.highlighted
+			background: #d0d0d0

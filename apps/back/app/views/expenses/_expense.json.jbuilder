@@ -1,0 +1,1 @@
+json.extract! expense, :id, :responsable, :offer_id, :expense_date, :total_ttc, :total_ht, :comment

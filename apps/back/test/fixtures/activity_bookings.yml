@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  people_count: 1
+  arrival_date: 2020-07-16
+  departure_date: 2020-07-16
+  total: 1
+  comission_fee: 1
+  promo_code: MyString
+  client: one
+  activity: one
+
+two:
+  status: 1
+  people_count: 1
+  arrival_date: 2020-07-16
+  departure_date: 2020-07-16
+  total: 1
+  comission_fee: 1
+  promo_code: MyString
+  client: two
+  activity: two

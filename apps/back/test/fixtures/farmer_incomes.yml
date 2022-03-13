@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer: one
+  state: 1
+  start_date: 2021-03-17
+  end_date: 2021-03-17
+  period_name: MyString
+  note: MyText
+  expenses_balance: 1.5
+  lodging_income_balance: 1.5
+  farmer_balance: 1.5
+  housework_income_balance: 1.5
+  annexes_incomes_balance: 1.5
+
+two:
+  offer: two
+  state: 1
+  start_date: 2021-03-17
+  end_date: 2021-03-17
+  period_name: MyString
+  note: MyText
+  expenses_balance: 1.5
+  lodging_income_balance: 1.5
+  farmer_balance: 1.5
+  housework_income_balance: 1.5
+  annexes_incomes_balance: 1.5

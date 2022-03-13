@@ -1,0 +1,25 @@
+---
+development:
+  cloud_name: agrivillage
+  api_key: '514868675498493'
+  api_secret: HidKdpdQnuHtxgZsjs-JuSZnnys
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: agrivillage
+  api_key: '514868675498493'
+  api_secret: HidKdpdQnuHtxgZsjs-JuSZnnys
+  enhance_image_tag: true
+  static_image_support: true
+staging:
+  cloud_name: agrivillage
+  api_key: '514868675498493'
+  api_secret: HidKdpdQnuHtxgZsjs-JuSZnnys
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: agrivillage
+  api_key: '514868675498493'
+  api_secret: HidKdpdQnuHtxgZsjs-JuSZnnys
+  enhance_image_tag: true
+  static_image_support: false

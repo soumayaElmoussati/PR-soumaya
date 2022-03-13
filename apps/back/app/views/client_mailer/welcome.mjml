@@ -1,0 +1,31 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <p><b>Bienvenue sur AgriVillage <%= @client.user.first_name %> !</b></p>
+
+      <p>
+        Votre compte AgriVillage a bien été créé. Vous pouvez dès à présent effectuer votre demande de réservation sur notre plateforme.
+      </p>
+
+      <p>
+        Vous avez le choix entre plus de 500 offres de séjours ou d’activités découvertes à la ferme.
+      </p>
+    </mj-text>
+
+    <mj-button font-family="Helvetica" background-color="#476458" color="white" border-radius="50px" href="https://www.agrivillage.fr/auth/sign-in-client">
+      JE PARS A LA FERME !
+    </mj-button>
+
+    <mj-text align="left">
+
+      <p>
+        L'équipe AgriVillage
+      </p>
+
+      <p>
+        Une question ? Consultez notre centre d’aide (<a href="https://blog.agrivillage.fr/faq-visiteurs">ici</a>) ou appelez-nous au 06.01.35.07.54
+      </p>
+
+    </mj-text>
+  </mj-column>
+</mj-section>

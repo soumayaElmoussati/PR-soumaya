@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  breakfast: false
+  linens: false
+  host_table: false
+  esprit_ferme: false
+  cleaning: false
+
+two:
+  breakfast: false
+  linens: false
+  host_table: false
+  esprit_ferme: false
+  cleaning: false

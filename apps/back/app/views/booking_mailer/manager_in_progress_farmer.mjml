@@ -1,0 +1,19 @@
+<mj-section background-color="white">
+  <mj-column>
+    <mj-text align="left">
+      <p> Bonjour <%= @booking.offer.farmer.user.first_name %>, </p>
+      <p> <%= @client.user.first_name %> commence son séjour dans la tiny house <%= @booking.offer.name %> dans 5 jours ! </p>
+      <p> Pour rappel, voici le détail de sa réservation : </p>
+      <ul>
+        <li> Date d’arrivée : <%= @booking.arrival_date.strftime("%d/%m/%Y") %> </li>
+        <li> Date de départ :  <%= @booking.departure_date.strftime("%d/%m/%Y") %> </li>
+        <li> Nombre de personnes : <%= @booking.people_count %> </li>
+        <li> Nom : <%= @client.full_name %> </li>
+
+      </ul>
+      <p> Très belle journée, </p>
+      <p> Cordialement, </p>
+      <p> L’équipe AgriVillage </p>
+    </mj-text>
+  </mj-column>
+</mj-section>

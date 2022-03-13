@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer: one
+  simple_bed: 
+  double_bed: 
+  private_bathroom: MyString
+  boolean: MyString
+
+two:
+  offer: two
+  simple_bed: 
+  double_bed: 
+  private_bathroom: MyString
+  boolean: MyString

@@ -1,0 +1,16 @@
+
+ Bonjour <%= @booking.offer.farmer.user.first_name %>, 
+ 
+ <%= @client.user.first_name %> qui a réservé un séjour dans la tiny house <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %> <%= @booking.people_count %> aimerait réserver un ou plusieurs service(s) annexe(s). 
+ 
+
+Tableau avec les infos + le prix total
+
+ Si l’une de ces demandes n’est pas disponible, merci de nous prévenir au plus vite pour que nous puissions en avertir <%= @client.user.first_name %>. 
+ 
+ Très belle journée, 
+ 
+ Cordialement 
+ 
+ L’équipe AgriVillage 
+ 

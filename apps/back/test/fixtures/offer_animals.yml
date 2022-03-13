@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  references:
+  cow: false
+  milk_cow: false
+  sheep: false
+  goat: false
+  pig: false
+  rabbit: false
+  duck: false
+  goose: false
+  turkey: false
+  chicken: false
+  lama: false
+
+two:
+  references:
+  cow: false
+  milk_cow: false
+  sheep: false
+  goat: false
+  pig: false
+  rabbit: false
+  duck: false
+  goose: false
+  turkey: false
+  chicken: false
+  lama: false

@@ -1,0 +1,13 @@
+Bonjour <%= @client.full_name %> !
+
+Malheureusement, <%= @booking.offer.farmer.user.first_name %> a été contraint d’annuler votre réservation <%= @booking.offer.name %> du <%= @booking.arrival_date.strftime("%d/%m/%Y") %> au <%= @booking.departure_date.strftime("%d/%m/%Y") %>.
+
+Nous vous adresserons le remboursement total de votre réservation sous 5 jours ouvrés.
+
+Nous vous prions de nous excuser pour ce désagrément.
+
+N’hésitez pas à retourner sur notre site, nous sommes certains que d’autres offres pourraient vous intéresser.
+
+L'équipe AgriVillage
+
+Une question ? Consultez notre centre d’aide ou appelez-nous au 06.01.35.07.54

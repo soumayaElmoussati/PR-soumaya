@@ -1,0 +1,281 @@
+json = {
+  meta: {
+    total_pages: @offers.total_pages,
+    current_page: @offers.current_page,
+    next_page: @offers.next_page,
+    total_count: @offers.total_count,
+  }
+}
+
+json[:offers] = @offers.map do |offer|
+  farmer = offer.farmer
+  organisation = nil
+  animals = nil
+  farm_types = nil
+  agriculture_types = nil
+  offer_description = nil
+  offer_service = nil
+  offer_equipment = nil
+  offer_settlement = nil
+  address = nil
+
+  if offer.address.present?
+    distance = nil
+
+    if offer.try(:distance)
+      distance = offer.distance
+    end
+
+    address = {
+      city: offer.address.city,
+      state: offer.address.state,
+      street_name: offer.address.street_name,
+      postal_code: offer.address.postal_code,
+      country_code: offer.address.country_code,
+      lat: offer.address.lat,
+      lng: offer.address.lng,
+      distance: distance
+    }
+  end
+
+  if offer.offer_animal.present?
+    offer_animals = offer.offer_animal
+    animals = {
+      cow: offer_animals.cow,
+      bee: offer_animals.bee,
+      milk_cow: offer_animals.milk_cow,
+      sheep: offer_animals.sheep,
+      goat: offer_animals.goat,
+      pig: offer_animals.pig,
+      rabbit: offer_animals.rabbit,
+      duck: offer_animals.duck,
+      goose: offer_animals.goose,
+      turkey: offer_animals.turkey,
+      chicken: offer_animals.chicken,
+      donkey: offer_animals.donkey,
+      snail: offer_animals.snail,
+      horse: offer_animals.horse,
+      lama: offer_animals.lama
+    }
+  end
+
+  if offer.offer_farm_type.present?
+    offer_farm_type = offer.offer_farm_type
+    farm_types = {
+      breeder: offer_farm_type.breeder,
+      cereal: offer_farm_type.cereal,
+      horticulturist: offer_farm_type.horticulturist,
+      market_gardener: offer_farm_type.market_gardener,
+      cheese_production: offer_farm_type.cheese_production,
+      winegrower: offer_farm_type.winegrower,
+      brewer: offer_farm_type.brewer,
+      arborist: offer_farm_type.arborist,
+      oyster_farmer: offer_farm_type.oyster_farmer,
+      mushroom_grower: offer_farm_type.mushroom_grower,
+      beekeeper: offer_farm_type.beekeeper,
+      cider_maker: offer_farm_type.cider_maker,
+      riding_stable: offer_farm_type.riding_stable,
+      agroforestry: offer_farm_type.agroforestry,
+    }
+  end
+
+  if offer.offer_agriculture_type.present?
+    offer_agriculture_type = offer.offer_agriculture_type
+    agriculture_types = {
+      biological: offer_agriculture_type.biological,
+      permaculture: offer_agriculture_type.permaculture,
+      agroecology: offer_agriculture_type.agroecology,
+      agroecological: offer_agriculture_type.agroecological,
+      conventional: offer_agriculture_type.conventional,
+      ringing: offer_agriculture_type.ringing,
+      durable: offer_agriculture_type.durable,
+      reliability: offer_agriculture_type.reliability,
+      hydroponics: offer_agriculture_type.hydroponics,
+    }
+  end
+
+  if offer.offer_description.present?
+    description = offer.offer_description
+    offer_description = {
+      residence: description.residence,
+      farm: description.farm,
+      farmer: description.farmer,
+      activities: description.activities,
+      discovery: description.discovery,
+      meeting_animals: description.meeting_animals,
+      milking_animals: description.milking_animals,
+      tasting: description.tasting,
+      birth_animal: description.birth_animal,
+      stroll: description.stroll,
+      harvest: description.harvest,
+      craft: description.craft
+    }
+  end
+
+  if offer.offer_service.present?
+    service = offer.offer_service
+    offer_service = {
+      breakfast: service.breakfast,
+      breakfast_price: service.breakfast_price,
+      linens: service.linens,
+      linens_price: service.linens_price,
+      host_table: service.host_table,
+      host_table_price: service.host_table_price,
+      esprit_ferme: service.esprit_ferme,
+      esprit_link: service.esprit_link,
+      cleaning: service.cleaning,
+      cleaning_price: service.cleaning_price,
+      breakfastopt: service.breakfastopt,
+      linensopt: service.linensopt,
+      cleaningopt: service.cleaningopt,
+    }
+  end
+
+  if offer.offer_settlement.present?
+    settlement = offer.offer_settlement
+    offer_settlement = {
+      baby_suitable: settlement.baby_suitable,
+      child_suitable: settlement.child_suitable,
+      smooking_allowed: settlement.smooking_allowed,
+      parties_allowed: settlement.parties_allowed,
+      additional_rules: settlement.additional_rules,
+      animals_welcome: settlement.animals_welcome,
+      accessible: settlement.accessible,
+    }
+  end
+
+  if offer.offer_equipment.present?
+    equipment = offer.offer_equipment
+    offer_equipment = {
+      kitchen: equipment.kitchen,
+      wifi: equipment.wifi,
+      tv: equipment.tv,
+      washing_machine: equipment.washing_machine,
+      fireplace: equipment.fireplace,
+      parking: equipment.parking,
+      swimming_pool: equipment.swimming_pool,
+      domestic_animals: equipment.domestic_animals,
+      english_speaking: equipment.english_speaking,
+      private_garden: equipment.private_garden,
+      shared_garden: equipment.shared_garden,
+      internet: equipment.internet,
+      dvd_player: equipment.dvd_player,
+      games: equipment.games,
+      dryer: equipment.dryer,
+      hair_dryer: equipment.hair_dryer,
+      drying_rack: equipment.drying_rack,
+      iron: equipment.iron,
+      wardrobe: equipment.wardrobe,
+      shower: equipment.shower,
+      bath: equipment.bath,
+      baby_bath: equipment.baby_bath,
+      heater: equipment.heater,
+      clim: equipment.clim,
+      fitness: equipment.fitness,
+      garden_lounge: equipment.garden_lounge,
+      bbq: equipment.bbq,
+      oven: equipment.oven,
+      hotplates: equipment.hotplates,
+      microwaves: equipment.microwaves,
+      toaster: equipment.toaster,
+      kettle: equipment.kettle,
+      coffee_machine: equipment.coffee_machine,
+      cutlery: equipment.cutlery,
+      dishwasher: equipment.dishwasher,
+      baby_chair: equipment.baby_chair,
+      fridge: equipment.fridge,
+      freezer: equipment.freezer,
+      deep_freezer: equipment.deep_freezer,
+      garage: equipment.garage,
+      secure_local: equipment.secure_local,
+      train: equipment.train,
+    }
+  end
+
+  if farmer.farmer_organisation.present?
+    organisation = {
+      bbc: farmer.farmer_organisation.bbc,
+      adb: farmer.farmer_organisation.adb,
+      fairefrance: farmer.farmer_organisation.fairefrance
+    }
+  end
+
+  pictures = offer.cloud_pictures.map do |picture|
+    {
+      order: picture.order,
+      public_id: picture.public_id,
+      picture_type: picture.picture_type,
+      url: picture.url
+    }
+  end
+
+  promotions = offer.offer_promotions.map do |promotion|
+    {
+      start_date: promotion.start_date,
+      end_date: promotion.end_date,
+      amount: promotion.amount,
+      statut: promotion.statut
+    }
+  end
+
+  price_periods = offer.offer_price_periods.map do |period|
+    {
+      end_date: period.end_date,
+      price_period: period.price_period,
+    }
+  end
+
+  {
+    id: offer.id,
+    name: offer.name,
+    slug: offer.slug,
+    certificated: offer.certificated,
+    people_count: offer.people_count,
+    rooms_count: offer.rooms_count,
+    bathrooms_count: offer.bathrooms_count,
+    sleeps_count: offer.sleeps_count,
+    state: offer.state,
+    residence_type: offer.residence_type,
+    price_per_person: offer.price_per_person,
+    created_at: offer.created_at,
+    max_people_count: offer.max_people_count,
+    impressions_count: offer.impressions_count,
+    farmer: {
+      id: farmer.id,
+      description: farmer.description,
+
+      user: {
+        id: farmer.user.id,
+        first_name: farmer.user.first_name,
+        last_name: farmer.user.last_name,
+        ambassador: farmer.user.ambassador
+      },
+
+      organisation: organisation
+    },
+
+    pictures: pictures,
+
+    promotions: promotions,
+
+    price_periods: price_periods,
+
+    animals: animals,
+
+    farm_types: farm_types,
+
+    agriculture_types: agriculture_types,
+
+    address: address,
+
+    description: offer_description,
+
+    equipment: offer_equipment,
+
+    services: offer_service,
+
+    settlement: offer_settlement,
+  }
+end
+
+json
