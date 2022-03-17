@@ -8,13 +8,24 @@
           <h2 class="f_subtitle xl-hide" />
 
           <div v-if="$ua.browser() === 'Safari'">
-            <img
-              src="@/assets/img/forest/safari.png"
-              class="safari-picture"
-              title="safari"
-              alt="safari"
-            >
+            <video
+              id="vid"
+              width="400"
+              class="introducing-video"
+              loop
+              autoplay
+              muted
+              controls >
+              <source
+                src="~assets/video/tf1.mp4"
+                type="video/mp4" >
+            </video>
+            <script>
+              document.getElementById('vid').play();
+            </script>
+
           </div>
+
           <div v-else>
             <div class="video-box">
               <video
@@ -514,6 +525,7 @@ import corn from '../../../assets/img/icones/corn.png'
 import bee from '../../../assets/img/icones/bee.png'
 import cow from '../../../assets/img/icones/cow.png'
 import tractor from '../../../assets/img/icones/tractor.png'
+
 export default {
   name: 'HomeBase',
   components: { VueperSlides, VueperSlide },
@@ -590,6 +602,7 @@ export default {
     ]
   })
 }
+
 </script>
 
 <style lang="scss" scoped>

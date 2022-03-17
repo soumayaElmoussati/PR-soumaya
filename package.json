@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/WilliamDASILVA/agrivillage#readme",
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
+    "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^7.5.0",
     "husky": "^1.3.1"
   },
@@ -28,5 +28,8 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "vue-canvasvideo": "^1.0.0"
   }
 }
